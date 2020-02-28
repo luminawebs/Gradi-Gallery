@@ -10,4 +10,13 @@
 	padding: 10px;
 	margin: 15px;
 	display: inline-block;
+	cursor: pointer;
+	transition: all 0.3s;
+}
+
+
+.imagenes:hover {
+	opacity: 0.5;
+	
+	transition: all 0.3s;
 }

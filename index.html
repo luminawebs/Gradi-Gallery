@@ -50,10 +50,22 @@ loadJSON('api/gradiAuthors.json',
 
 
 				var e = document.createElement('div');
-				var t = document.createTextNode(data[i].id);
+                var id = document.createTextNode(data[i].id);
+                var author = document.createTextNode(data[i].author);
+                var width = document.createTextNode(data[i].width);
+                var height = document.createTextNode(data[i].height);
+                var url = document.createTextNode(data[i].url);
+
 				e.classList.add("imagenes");
 				e.style.backgroundImage = "url('" + data[i].download_url + ".jpg')"; 
-				e.appendChild(t);
+                e.appendChild(id);
+                e.appendChild(author);
+                e.appendChild(width);
+                e.appendChild(height);
+                e.appendChild(url);
+
+
+
 
 
 			   var ids= data[i].id;
@@ -82,7 +94,6 @@ loadJSON('api/gradiAuthors.json',
 
 <div id="contenedor">
 	
-abc
 	<div id="contenido">Hola Mundo</div>
 
 
