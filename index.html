@@ -3,8 +3,7 @@
 <head>
 	<title></title>
 
-
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+<link rel="stylesheet" type="text/css" href="css/estilos.css">
 
 <script>
 
@@ -41,7 +40,31 @@ loadJSON('api/gradiAuthors.json',
 
 
          	for (var i = 0; i < data.length; i++) {
-			   console.log(data[i]);
+			   console.log(data[i].id);
+			   console.log(data[i].author);
+			   console.log(data[i].width);
+			   console.log(data[i].height);
+			   console.log(data[i].url);
+			   console.log(data[i].download_url);
+
+
+
+				var e = document.createElement('div');
+				var t = document.createTextNode(data[i].id);
+				e.classList.add("imagenes");
+				e.style.backgroundImage = "url('" + data[i].download_url + ".jpg')"; 
+				e.appendChild(t);
+
+
+			   var ids= data[i].id;
+				document.body.insertBefore(e, document.body.childNodes[i]);
+
+			/*
+			   document.getElementById('contenido').innerHTML = '<ol><li>html data</li></ol>' + i;
+
+			   document.getElementsByClassName('contenido') = '<ol><li>html data</li></ol>' + ids;
+			*/
+
 			}
 
 
@@ -49,7 +72,7 @@ loadJSON('api/gradiAuthors.json',
          function(xhr) { console.error(xhr); }
 );
 
-
+	
 
 </script>
 
@@ -57,9 +80,13 @@ loadJSON('api/gradiAuthors.json',
 </head>
 <body>
 
+<div id="contenedor">
+	
+abc
+	<div id="contenido">Hola Mundo</div>
 
-<div id="demo">Hola Mundo</div>
 
+</div>
 
 </body>
 </html>
