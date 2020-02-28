@@ -45,12 +45,15 @@ loadJSON('api/gradiAuthors.json',
          	for (var i = 0; i < data.length; i++) {
 			   
                 /*Se prueba que se cargan los contenidos en console*/
+               
+               /*
                console.log(data[i].id);
 			   console.log(data[i].author);
 			   console.log(data[i].width);
 			   console.log(data[i].height);
 			   console.log(data[i].url);
 			   console.log(data[i].download_url);
+                */
 
                // Contenidos del diV con imágenes
 				var e = document.createElement('div');
@@ -68,9 +71,13 @@ loadJSON('api/gradiAuthors.json',
 				e.style.backgroundImage = "url('" + data[i].download_url + ".jpg')"; 
                 fondoVerde.appendChild(id);
                 fondoVerde.appendChild(author);
-                fondoVerde.appendChild(width);
-                fondoVerde.appendChild(height);
-                fondoVerde.appendChild(url);
+                
+                //Se eliminan items que no son necesarios
+                //fondoVerde.appendChild(width);
+                //fondoVerde.appendChild(height);
+                //fondoVerde.appendChild(url);
+                
+                // Se agrega fondo verde a imgs
                 e.appendChild(fondoVerde);
 
 
