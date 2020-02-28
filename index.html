@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+<script>
+
+function loadJSON(path, success, error)
+{
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function()
+    {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                if (success)
+                    success(JSON.parse(xhr.responseText));
+            } else {
+                if (error)
+                    error(xhr);
+            }
+        }
+    };
+    xhr.open("GET", path, true);
+    xhr.send();
+}
+
+
+loadJSON('api/gradiAuthors.json',
+         function(data) { 
+         	/*console.log(data);
+         	console.log(data[1]);
+         	console.log(data[2]);
+         	*/
+
+         	var data02 = data[2].id
+
+         	console.log();
+
+
+         	for (var i = 0; i < data.length; i++) {
+			   console.log(data[i]);
+			}
+
+
+          },
+         function(xhr) { console.error(xhr); }
+);
+
+
+
+</script>
+
+
+</head>
+<body>
+
+
+<div id="demo">Hola Mundo</div>
+
+
+</body>
+</html>
