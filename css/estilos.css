@@ -38,7 +38,7 @@ body{
 
 
 .fondo-verde{
-	padding: 60px 10px 10px 10px;
+	padding: 40px 10px 10px 10px;
 	opacity: 0;
 	transition: all 0.3s;
 	background-color: rgba(0,214,100);
@@ -68,8 +68,12 @@ body{
 	}
 
 
-.numero{
-	font-size: 2.5em;
+
+
+.idcontenedor{
+	font-size: 2em;
+	text-align: right;
+	margin-bottom: 158px;
 }
 
 

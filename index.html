@@ -58,6 +58,9 @@ loadJSON('api/gradiAuthors.json',
                // Contenidos del diV con imágenes
 				var e = document.createElement('div');
                 var fondoVerde = document.createElement('div');
+                var idcontainer = document.createElement('div');
+
+
                 fondoVerde.classList.add("fondo-verde");
 
 
@@ -67,9 +70,11 @@ loadJSON('api/gradiAuthors.json',
                 var height = document.createTextNode(data[i].height);
                 var url = document.createTextNode(data[i].url);
 
-				e.classList.add("imagenes");
+                e.classList.add("imagenes");
+                idcontainer.classList.add("idcontenedor");
 				e.style.backgroundImage = "url('" + data[i].download_url + ".jpg')"; 
-                fondoVerde.appendChild(id);
+                idcontainer.appendChild(id);
+                fondoVerde.appendChild(idcontainer);
                 fondoVerde.appendChild(author);
                 
                 //Se eliminan items que no son necesarios
